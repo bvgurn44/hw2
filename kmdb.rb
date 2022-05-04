@@ -70,10 +70,10 @@
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
 # TODO!
-Studio.destroy_all
-Movie.destroy_all
-Actor.destroy_all
-Role.destroy_all
+Studios.destroy_all
+Movies.destroy_all
+Actors.destroy_all
+Roles.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
@@ -83,7 +83,111 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+studio = Studios.new
+studio["name"] = "Warner Bros."
+studio.save
 
+movie = Movies.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = "2005"
+movie["rated"] = "PG-13"
+movie.save
+
+movie = Movies.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = "2008"
+movie["rated"] = "PG-13"
+movie.save
+
+movie = Movies.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = "2012"
+movie["rated"] = "PG-13"
+movie.save
+
+actor = Actors.new
+actor["name"] = "Christian Bale"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Michael Caine"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Liam Neeson"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Katie Holmes"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Gary Oldman"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Heath Ledger"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Aaron Eckhart"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Maggie Gyllenhaal"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Tom Hardy"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Joseph Gordon-Levitt"
+actor.save
+
+actor = Actors.new
+actor["name"] = "Anne Hathaway"
+actor.save
+
+role = Roles.new
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Roles.new
+role["character_name"] = "Alfred"
+role.save
+
+role = Roles.new
+role["character_name"] = "Ra's Al Ghul"
+role.save
+
+role = Roles.new
+role["character_name"] = "Rachel Dawes"
+role.save
+
+role = Roles.new
+role["character_name"] = "Commissioner Gordon"
+role.save
+
+role = Roles.new
+role["character_name"] = "Joker"
+role.save
+
+role = Roles.new
+role["character_name"] = "Harvey Dent"
+role.save
+
+role = Roles.new
+role["character_name"] = "Bane"
+role.save
+
+role = Roles.new
+role["character_name"] = "John Blake"
+role.save
+
+role = Roles.new
+role["character_name"] = "Selina Kyle"
+role.save
 
 # Prints a header for the movies output
 puts "Movies"
