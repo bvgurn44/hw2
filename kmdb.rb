@@ -87,22 +87,28 @@ studio = Studios.new
 studio["name"] = "Warner Bros."
 studio.save
 
+#Studio Association
+warner_bros = Studios.find_by({"name" => "Warner Bros."})
+
 movie = Movies.new
 movie["title"] = "Batman Begins"
 movie["year_released"] = "2005"
 movie["rated"] = "PG-13"
+movie["studio_id"] = Movie.find_by({"studio_id" => warner_bros["id"] })
 movie.save
 
 movie = Movies.new
 movie["title"] = "The Dark Knight"
 movie["year_released"] = "2008"
 movie["rated"] = "PG-13"
+movie["studio_id"] = Movie.find_by({"studio_id" => warner_bros["id"] })
 movie.save
 
 movie = Movies.new
 movie["title"] = "The Dark Knight Rises"
 movie["year_released"] = "2012"
 movie["rated"] = "PG-13"
+movie["studio_id"] = Movie.find_by({"studio_id" => warner_bros["id"] })
 movie.save
 
 actor = Actors.new
@@ -149,8 +155,26 @@ actor = Actors.new
 actor["name"] = "Anne Hathaway"
 actor.save
 
+#Associating actors and movies for roles
+bale = Actor.find_by({"name" => "Christian Bale"})
+caine = Actor.find_by({"name" => "Michael Caine"})
+neeson = Actor.find_by({"name" => "Liam Neeson"})
+holmes = Actor.find_by({"name" => "Katie Holmes"})
+oldman = Actor.find_by({"name" => "Gary Oldman"})
+ledger = Actor.find_by({"name" => "Heath Ledger"})
+eckhart = Actor.find_by({"name" => "Aaron Eckhart"})
+hardy = Actor.find_by({"name" => "Tom Hardy"})
+jgl = Actor.find_by({"name" => "Joseph Gordon-Levitt"})
+hathaway = Actor.find_by({"name" => "Anne Hathaway"})
+
+bb = Movie.find_by({"title" => "Batman Begins"})
+tdk = Movie.find_by({"title" => "The Dark Knight"})
+tdkr = Movie.find_by({"title" => "The Dark Knight Rises"})
+
 role = Roles.new
 role["character_name"] = "Bruce Wayne"
+role["actor_id"] = Actor.find_by({"actor_id" => bale["id"]})
+role["movie_id"] = Movie.find_by({"movie_id" => bb["id"]})
 role.save
 
 role = Roles.new
