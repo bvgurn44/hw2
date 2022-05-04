@@ -184,7 +184,7 @@ role["character_name"] = "Bruce Wayne"
 role["actor_id"] = Actor.find_by({"id" => bale["id"]})
 role["movie_id"] = Movie.find_by({"id" => batman_begins["id"]})
 role.save
-
+#movie["studio_id"] = Movie.find_by({"studio_id" => warner_bros["id"] })
 role = Role.new
 role["character_name"] = "Alfred"
 role["actor_id"] = Actor.find_by({"id" => caine["id"]})
@@ -285,6 +285,13 @@ role.save
 
 puts "Roles: #{Role.all.count}"
 
+#roles=Role.all
+#for role in roles
+    #{role["actor_id"]} 
+#    puts ("#{role["id"]} #{role["movie_id"]} #{role["character_name"]}")
+#end
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -306,11 +313,14 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
-actors = Actor.all
-roles = Role.all
+ 
 
+roles=Role.all
 for movie in movies
+        
     for role in roles
-        puts "#{role["movie_id"]} #{role["actor_id"]} #{role["character_name"]}"
+    actor_id_name=role["actor_id"]
+                   puts ("#{movie["title"]} #{actor_id_name}  #{role["character_name"]}")
+        #end
     end
 end
